@@ -1,0 +1,16 @@
+services:
+  jdownloader-2:
+    image: jlesage/jdownloader-2
+    ports:
+      - "5800:5800"
+    volumes:
+      - config:/config:rw
+      - downloads:/output:rw
+
+volumes:
+  config:
+  downloads:
+    driver_opts:
+      type: "nfs"
+      o: ${JDOWNLOADER_NFS_PATH}
+      device: ${JDOWNLOADER_NFS_DEVICE_DOWNLOADS}
