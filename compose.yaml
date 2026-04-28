@@ -4,8 +4,8 @@ services:
     ports:
       - "5800:5800"
     volumes:
-      - config:/config:rw
-      - downloads:/output:rw
+      - config:/config
+      - downloads:/output
 
 volumes:
   config:
